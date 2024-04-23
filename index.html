@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <p>good</p>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="引论"><a href="#引论" class="headerlink" title="引论"></a>引论</h1><p>操作系统是一组管理计算机硬件资源的软件集合，它向计算机程序提供“共性”的服务</p>
+<p>–提供一个计算机用户与计算机硬件系统之间的接口，使计算机系统更易于使用。（使用者）</p>
+<p>–有效地控制和管理计算机系统中的各种硬件和软件资源，使之得到更有效的利用。（资源管理者）</p>
+<p>–合理地组织计算机系统的工作流程，以改善系统性能（如响应时间、系统吞吐量）</p>
+<p><strong>API</strong>：应用程序编程接口，写的程序与其它第三方程序或者库的接口，互相调用</p>
+<p><strong>ABI</strong>：二进制接口，二进制代码与其它二进制文件之间的接口，互相的转化</p>
+<p>人机交互速度慢——引出”批处理系统“</p>
+<h4 id="批处理系统"><a href="#批处理系统" class="headerlink" title="批处理系统"></a>批处理系统</h4><p>加载在计算机上的一个系统软件，在它的控制下，计算机能够自动地、成批地处理一个或多个用户的作业（这作业包括程序、数据和命令）。</p>
+<p>联机批处理：</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240306100056867.png" alt="image-20240306100056867"></p>
+<p>监督程序不停的处理各个作业，实现作业到作业的自动转接</p>
+<p>脱机批处理：</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240306100142269.png" alt="image-20240306100142269"></p>
+<p>输入输出都先给卫星机，而不是直接与主机连接，但是每次主机内存仅仅存放一道程序</p>
+<p>问题：批处理系统本质上在IO过程CPU都是空闲，CPU利用率不高，因此引出”多道程序系统“</p>
+<h4 id="多道程序系统（多道批处理系统）"><a href="#多道程序系统（多道批处理系统）" class="headerlink" title="多道程序系统（多道批处理系统）"></a>多道程序系统（多道批处理系统）</h4><p>允许多个程序同时进入内存并运行。即同时把多个程序放入内存中（前提是内存放的下），并允许它们交替在CPU中运行，它们共享系统中的各种硬、软件资源。当一道程序因I&#x2F;O请求而暂停运行时，CPU便立即转去运行另一道程序</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240306100547645.png" alt="image-20240306100547645"></p>
+<p>单处理机系统中多道程序系统运行特点：</p>
+<ul>
+<li>内存中同时存放多道相互独立的程序</li>
+<li>宏观上并行，同时进入系统的程序都处于运行状态</li>
+<li>微观上串行，各个程序轮流使用CPU，交替运行</li>
+</ul>
+<p>问题：多道程序系统平均周转时间长，不能提供交互能力，引出”分时系统“</p>
+<h4 id="分时系统"><a href="#分时系统" class="headerlink" title="分时系统"></a>分时系统</h4><p>分时是指多个用户分享使用同一台计算机。多个程序分时共享硬件和软件资源</p>
+<ul>
+<li>多路连接，宏观上用户共享，微观上分时</li>
+<li>用户之间互不干扰</li>
+<li>及时响应</li>
+<li>可交互性，人机对话</li>
+</ul>
+<p>CPU处理时间被分割成多个时间片，将各个时间片分给不同程序，实现多个程序”同时“运行</p>
+<p><strong>系统调用</strong>：从用户态切换到内核态（陷阱）</p>
+<p>windows操作系统系统调用<code>int 0x2e</code></p>
+<h4 id="操作系统网络化"><a href="#操作系统网络化" class="headerlink" title="操作系统网络化"></a>操作系统网络化</h4><ul>
+<li>网络操作系统：传统OS上添加软件层，提供联网和资源的远程访问</li>
+<li>分布式操作系统：多台机器统一管理形成单一系统，对用户和应用透明。整个系统中有一个全局的操作系统，具有网络作为底层支持，支持并行（合作）</li>
+</ul>
+<h4 id="实时系统"><a href="#实时系统" class="headerlink" title="实时系统"></a>实时系统</h4><p>应对各种产品开发出的独立的系统，满足不同产品的需求</p>
+<ul>
+<li>及时响应</li>
+<li>高可靠性和安全性</li>
+<li>专用性高</li>
+</ul>
+<h4 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h4><ul>
+<li>陷阱：同步异常，特定指令的执行结果，系统调用</li>
+<li>中断：异步异常，来自IO设备，或者某些时钟</li>
+</ul>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240315102613959.png" alt="image-20240315102613959"></p>
+<h3 id="操作系统结构"><a href="#操作系统结构" class="headerlink" title="操作系统结构"></a>操作系统结构</h3><p>模块接口</p>
+<p>有序分层：设计调用关系，与硬件的关系，与虚存的关系，可扩充</p>
+<p>层次结构：减少各个模块之间的无规则调用</p>
+<p>虚拟机结构：系统提供多道程序能力，提供比裸机更方便扩展的计算机，同时实现二者的独立</p>
+<p>微内核结构：内核只包括中断处理、进程通信、基本调度，变得易于实现，可移植性好，配置灵活，但是运行速度慢（互相调用较多）</p>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>计算机启动过程boot</p>
+<p>BootLoader为系统加电后运行第一段代码</p>
+<p>Booter初始化嵌入式系统硬件，初始化部分硬件</p>
+<p>Loader将操作系统加载到内存中，并跳转到操作系统的代码执行</p>
+<p>BootLoader严重依赖硬件，不同外设就对应不同的启动</p>
+<p>U-Boot启动流程，基本分为stage1和stage2</p>
+<p>stage1设备初始化的汇编代码</p>
+<p>stage2实现复杂功能，通常c语言实现</p>
+<h3 id="MIPS的基本地址空间"><a href="#MIPS的基本地址空间" class="headerlink" title="MIPS的基本地址空间"></a>MIPS的基本地址空间</h3><p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240315105946890.png" alt="image-20240315105946890"></p>
+<ul>
+<li><strong>kuseg: 这些地址是用户态可用的地址,在有MMU的机器里,这些地址将一概被MMU作转换,除非MMU的设置被建立好,否则这2G的地址是不可用的.</strong></li>
+<li><strong>kseg0: 将他们的最高位清零,即可映射到物理地址段512M(0x00000000 – 0x1fffffff).这种映射关系很简单,通常称之为”非转换的”地址区域,几乎全部对这段地址的存取都会通过cache,因此cache设置好之前,不能随便使用这段地址.</strong><ul>
+<li><strong>通常一个没有MMU的系统会使用这段地址作为其绝大多数程序和数据的存放位置;</strong></li>
+<li><strong>对于有MMU的系统,操作系统核心会存放在这个区域</strong></li>
+</ul>
+</li>
+<li><strong>kseg1: 将这些地址的高三位清零可映射到相应的物理地址上,与kseg0映射的物理地址一样,但kseg1是非cache存取的.kseg1是唯一在系统重启时能正常工作的地址空间</strong></li>
+<li><strong>kseg2: 这块区域只能在核心态下使用并且要经过MMU的转换. 在MMU设置好之前,不要存取该区域. 除非在写一个真正的操作系统,否则没有理由用kseg2. 有时会看到该区域被分为kseg2和kseg3,意在强调低半部分(kseg2)可供运行在管理态的程序使用.</strong></li>
+</ul>
+<p><strong>MBR</strong>：硬盘上第0磁头，第0磁道，第一个扇区，Master Boot Record，主存引导记录，大小512字节，存放预启动信息、分区表信息</p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h4 id="ELF"><a href="#ELF" class="headerlink" title="ELF"></a>ELF</h4><p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240315115432449.png"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240315115505958.png" alt="image-20240315115505958"></p>
+<p>链接过程：将.o文件合并成可执行文件，将之前没有填写的地址补充完</p>
+<p>装载过程：系统调用，加载即将要运行的程序，加载到内存中</p>
+<h3 id="存储管理基础"><a href="#存储管理基础" class="headerlink" title="存储管理基础"></a>存储管理基础</h3><p>以<strong>内存</strong>为中心的存储资源(程序在内存中运行)</p>
+<p>用户角度：</p>
+<ul>
+<li>容量大</li>
+<li>速度快（性能）</li>
+<li>独立拥有，不受干扰（安全）</li>
+</ul>
+<p>资源管理：</p>
+<ul>
+<li>多用户提供服务</li>
+<li>效率，利用率，能耗</li>
+</ul>
+<p>RAM易失性，其它的非易失，但是速度慢</p>
+<p>存储组织：在存储技术和cpu寻址技术许可范围内组织合理的存储结构</p>
+<p>存储管理的基本机制：抽象</p>
+<ul>
+<li>地址空间：一个进程能够用于访问内存的地址集合</li>
+<li>逻辑地址：虚拟地址，程序使用的地址</li>
+<li>物理地址：物理内存中数据存储的地址</li>
+</ul>
+<p>地址独立性：程序发出的地址与物理地址无关</p>
+<p>地址保护性：一个程序不能访问另一个程序的地址</p>
+<p>存储管理的功能：</p>
+<ul>
+<li>存储分配和回收</li>
+<li>地址变换</li>
+<li>存储共享和保护</li>
+<li>存储器扩充：涉及逻辑地址和物理地址</li>
+</ul>
+<p>多道程序的内存管理：分区式分配</p>
+<p>把内存分为一些大小相等或不等的分区，每个应用程序占用一个或多个分区。操作系统占用其中一个分区</p>
+<h4 id="固定式分区"><a href="#固定式分区" class="headerlink" title="固定式分区"></a>固定式分区</h4><p>内存划分为若干个固定大小的连续分区，可以分区大小相同或者不同</p>
+<p>优点：易于实现，开销小</p>
+<p>缺点：内碎片造成浪费，分区总数固定限制了并发执行的程序数目</p>
+<p>采用<strong>分区表</strong>记录分区的大小和使用情况</p>
+<h4 id="可变式分区"><a href="#可变式分区" class="headerlink" title="可变式分区"></a>可变式分区</h4><p>分区大小可变，没有内碎片，有外碎片</p>
+<h4 id="内存分区分配算法"><a href="#内存分区分配算法" class="headerlink" title="内存分区分配算法"></a>内存分区分配算法</h4><ol>
+<li>首次适应算法：每个空闲区按照存储空间地址递增顺序连接，从最开始查找，分配第一个满足请求的空白块</li>
+<li>下次适应算法：存储空间的空白块连接成一个循环链表，每次请求合适分区时，总是从<strong>上次查找结束的地方开始</strong>，分配第一个满足请求的空白块</li>
+<li>最佳适应算法：总是选择大小最接近所需大小的空白块。将空闲块从小到大排序，选择第一个匹配的</li>
+<li>最坏适应算法：总是选择最大的空闲区。将空闲块从大到小排序，选择最大的那个块</li>
+</ol>
+<p>这四个算法是基于顺序搜索的，仅仅适用于小系统，大中型系统采用基于索引的动态分区匹配算法</p>
+<ol>
+<li>快速适应算法：空闲区按照容量大小分类，常用大小的空闲区设立单独的空闲区链表。系统为多个空闲链表建立一个索引表</li>
+<li>伙伴系统：动态分区，分配存储块时将一个大存储块分成两个大小相同的存储块（Linux系统采用），通常分配2的幂次内存</li>
+</ol>
+<p>内碎片：已经分配出去但是没有得到利用</p>
+<p>外碎片：无法利用的小分区，可以利用紧凑技术消除外碎片</p>
+<h4 id="紧凑技术"><a href="#紧凑技术" class="headerlink" title="紧凑技术"></a>紧凑技术</h4><p>通过移动作业，将多个分散的小分区拼接成一个大分区，需要动态重定位</p>
+<h4 id="多重分区分配"><a href="#多重分区分配" class="headerlink" title="多重分区分配"></a>多重分区分配</h4><p>支持结构化程序设计，将一个程序分成很多片段。片段之间不需要连续，通过重定位可以实现互相调用。将该程序的各个片段分别放到内存。</p>
+<p>分区存储要防止一个作业干扰另一个作业，需要建立分区存储保护机制</p>
+<p>界限寄存器法和存储保护键法</p>
+<h4 id="分区管理技术"><a href="#分区管理技术" class="headerlink" title="分区管理技术"></a>分区管理技术</h4><p>覆盖和交换在多道程序技术下进行内存扩充</p>
+<p>实现在小内存下运行大作业，有效提升内存利用率</p>
+<ul>
+<li>覆盖：将程序划分为多个相对独立的程序段，不同时装入程序段，共享一个区域内存。但是覆盖结构需要用户自行定义，较麻烦</li>
+<li>交换：将暂时不使用的某些程序及其数据从主存转移到辅存中，腾出内存空间，并将指定程序从辅存读入到主存进行运行</li>
+</ul>
+<h3 id="页式内存管理"><a href="#页式内存管理" class="headerlink" title="页式内存管理"></a>页式内存管理</h3><p>程序是静止的，是存放在磁盘上的可执行文件</p>
+<p>进程是动态的。进程包括程序和程序处理对象（数据集），是一个程序的执行过程，是分配资源的基本单位。通常把进程分为系统进程和用户进程</p>
+<p>作业是用户需要计算机完成的某项任务，是要求计算机所做工作的集合</p>
+<p>页式基本思想：把一个逻辑地址连续的程序分散存放到若干不连续的内存区域内，并保证程序的正确执行。既可以充分利用内存空间，又可以减少移动带来的开销</p>
+<h4 id="纯分页系统"><a href="#纯分页系统" class="headerlink" title="纯分页系统"></a>纯分页系统</h4><p>无页面对换，无虚拟存储器，一个作业需要将其所有页全部装入到主存的页框中。</p>
+<p><strong>页（页面）</strong>：将逻辑地址空间分成大小相同的片 ，从0开始编号</p>
+<p><strong>存储块（页框）</strong>：物理内存的存储空间划分为与页面大小相同的片，称为页框，从0开始编号</p>
+<p><strong>页表</strong>：描述页面与页框之间的对应关系，每个进程分配一张页表，每一个页面在页表中都有一个页表项，页表存放在内存中</p>
+<p>页面大小通常由硬件决定</p>
+<p>虚拟地址可以表示为<code>页号+页内偏移</code></p>
+<p>物理地址可以表示为<code>块号+页内偏移</code></p>
+<ul>
+<li>页面太小：减少了内碎片，可以提升内存利用率。每个进程的页面数增多，页表长度增加，内存占用大，页面换进换出速度降低</li>
+<li>页面太大：增加内碎片，降低内存利用率，每个进程页面数减少，页表长度减少，内存占用少，页面换进换出速度提升</li>
+</ul>
+<p>随之逻辑空间增大，划分的页较多，页表大，占用内存大，引出多级页表</p>
+<p>正在运行的进程先把外层页表（页表的页表）调入内存，而后动态调入内层页表。只将当前所需的一些内层页表装入内存，其余部分根据需要再陆续调入。</p>
+<p>二级页表对应的虚拟地址结构<code>页表页面号+页号+页内偏移</code></p>
+<p>多级页表的设计大小原则：尽量使得每个页表被填充满</p>
+<p>页表机制在空间上优化了，但是提升了时间上的访问速度，引入快表</p>
+<p>页共享与保护：各进程把需共享的数据&#x2F;代码的相应页面指向相同页框</p>
+<p><strong>快表结构：TLB</strong></p>
+<p>CPU 产生逻辑地址的页号，首先在快表中寻找，若命中就找出其对应的物理块；若未命中，再到页表中找其对应的物理块，并将相应的页表项复制到快表。若快表中内容满，则按某种算法淘汰某些页。</p>
+<h3 id="段式内存管理"><a href="#段式内存管理" class="headerlink" title="段式内存管理"></a>段式内存管理</h3><p>分段的二维地址空间</p>
+<p>一个段为一组逻辑信息，每个作业的地址空间由一些段组成，每个段都有自己的名字（段号），都是一段连续的地址空间，首地址为0</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240322110619793.png" alt="image-20240322110619793"></p>
+<h4 id="分段的地址结构"><a href="#分段的地址结构" class="headerlink" title="分段的地址结构"></a>分段的地址结构</h4><p>逻辑地址由段号和段内地址组成</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240322110841135.png" alt="image-20240322110841135"></p>
+<p>段表：记录段与内存位置的对应关系，保存在内存中，段表由段表寄存器给出初始地址和长度</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240322111000675.png" alt="image-20240322111000675"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240322111045342.png" alt="image-20240322111045342"></p>
+<p><strong>可重入代码(Reentrant Code)</strong> 又称为“纯代码”(Pure Code)，是一种允多个进程同时访问的代码。为使各个进程所执行的代码完全相同，绝对不允许可重入代码在执行中有任何改变。因此，可重入代码是一种不允许任何进程对它进行修改的代码</p>
+<p>分段管理优点：容易实现段共享，对段的保护简单</p>
+<p>缺点：地址变换耗时，段表存储要空间，解决分段的动态增长要拼接</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240322111641216.png" alt="image-20240322111641216"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240322112008666.png" alt="image-20240322112008666"></p>
+<p>将分页与分段结合，先将用户程序分段，每个段分成若干页</p>
+<p>每个进程一个段表，每个段一个页表</p>
+<p>地址空间组成<code>段号+段内页号+页内地址偏移</code></p>
+<p>段号找到段表里面的页表，类似于一个页表对应于一个段</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240322112300679.png" alt="image-20240322112300679"></p>
+<h4 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h4><p>时间局部性：一条指令的一次执行和下次执行，一个数据的一次访问和下次访问都集中在一段较短时间内</p>
+<p>空间局部性：当前指令和邻近的几条指令，当前访问的数据和邻近的数据都集中在一个较小区域内</p>
+<h3 id="虚拟存储管理"><a href="#虚拟存储管理" class="headerlink" title="虚拟存储管理"></a>虚拟存储管理</h3><p>虚拟内存是一种存储管理技术，为每一个进程都提供一个大的、一致的、连续可用的私有的地址空间。</p>
+<ol>
+<li>由操作系统管理：不必将程序所有内容放入内存</li>
+<li>实现小颗粒度的内存与外存的交换（分页）</li>
+<li>程序从逻辑上访问地址，而不关心物理地址</li>
+</ol>
+<p>代价：牺牲cpu时间以及内外存交换的时间，虚拟存储的最大容量由计算机地址结构决定</p>
+<h4 id="请求分页系统"><a href="#请求分页系统" class="headerlink" title="请求分页系统"></a>请求分页系统</h4><p>允许只装入若干页（段）的用户程序和数据就可以运行</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329095820815.png" alt="image-20240329095820815"></p>
+<p>一个进程的虚拟地址空间大小和其虚拟存储空间大小相同，都从0编址</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329100046061.png" alt="image-20240329100046061"></p>
+<p>页面调入策略：按需调页，也叫请求式调页</p>
+<ul>
+<li><p>当进程开始时，所有页都在磁盘上，每个页都需要通过页错误（<strong>Page Fault,也称缺页异常</strong>）来调入内存。预调页同时将所需要的所有页一起调入内存，从而阻止了大量的页错误。部分操作系统如 Solaris 对小文件就采取预调页调度。</p>
+</li>
+<li><p>实际应用中，可以为每个进程维护一个当前工作集合（working set，简称<strong>工作集</strong>）中的页的列表，如果进程在暂停之后需要重启时，根据这个列表使用预调页将所有工作集合中的页一次性调入内存。</p>
+</li>
+<li><p>若程序执行的<strong>局部性较差</strong>，则预先装入的很多页面不会很快被引用，并会占用大量的内存空间，反而降低系统的效率。</p>
+</li>
+</ul>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329100548040.png" alt="image-20240329100548040"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329100556017.png" alt="image-20240329100556017"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329100603181.png" alt="image-20240329100603181"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329100611736.png" alt="image-20240329100611736"></p>
+<h4 id="页面的置换策略"><a href="#页面的置换策略" class="headerlink" title="页面的置换策略"></a>页面的置换策略</h4><p><strong>最优置换</strong>：从主存中移出永远不再需要的页面，如这样的页面不存在，则应选择相对于现在的时刻最长时间不需要访问的页面。无法实现，但是可以用于比较性研究</p>
+<p>**先进先出(FIFO)**：缺页时，淘汰最先进的页</p>
+<p>性能差，容易出现<strong>Belady异常</strong>：随着分配的页框增多，缺页率反而提升</p>
+<p><strong>FIFO的第一次改进-Second Chance</strong></p>
+<p>如果被淘汰的数据之前被访问过，则给其第二次机会（不算装入的访问）</p>
+<p><strong>FIFO的第二次改进-Clock</strong></p>
+<p>将FIFO修改为一个环形队列</p>
+<ol>
+<li>没有缺页错误，访问的页的访问位给置1，指针不动</li>
+<li>缺页错误<ul>
+<li>当前页访问位为1：将其置0，指针前移一位，直到找到访问位为0的页，然后执行下面</li>
+<li>当前访问位为0，替换当前页面，访问位置1，指针前移一位</li>
+</ul>
+</li>
+</ol>
+<p>实际很少使用FIFO类算法，命中率低</p>
+<p><strong>最近最少使用LRU</strong></p>
+<p>核心思想：如果某个数据最近被使用过，那么其将来被访问的概率更高，是对局部性原理的合理近似</p>
+<p>软件实现：链表</p>
+<ul>
+<li>链表节点保存当前使用的页面的页号</li>
+<li>每次访存，找到，节点移动到头部，没找到，新建节点到头部</li>
+<li>链表尾部为“最久未使用”，淘汰</li>
+</ul>
+<p>硬件实现：计数器</p>
+<p><strong>老化算法（LRU近似）</strong>，自行了解</p>
+<p><strong>工作集算法</strong></p>
+<p>工作集：进程运行正在使用的页面集合</p>
+<p>进程执行过程趋于某个局部位置时，工作集逐渐稳定，局部位置改变，工作集快速改变直到趋于稳定</p>
+<p>算法：需要替换时，选择不在当前工作集的页进行替换</p>
+<p>被换出的页面必要时需要进行内容更新</p>
+<h4 id="工作集和驻留集管理"><a href="#工作集和驻留集管理" class="headerlink" title="工作集和驻留集管理"></a>工作集和驻留集管理</h4><p>进程工作集：进程正在使用的页面的集合</p>
+<p>进程驻留集：进程驻留在内存的页面的集合，或者进程分到的物理页框的集合</p>
+<p>由过去的短时间内工作集来调整驻留集</p>
+<p>页框分配问题：</p>
+<ul>
+<li>给每个进程分配页框过少，驻留内存的进程多，并发程度高，但是缺页中断概率大</li>
+<li>每个进程分配页框多，驻留内存进程少，并发程度低，影响资源利用率</li>
+</ul>
+<p>页面分配策略：可变优于固定，但是可变的实现起来非常困难</p>
+<h4 id="抖动问题"><a href="#抖动问题" class="headerlink" title="抖动问题"></a>抖动问题</h4><p>驻留内存的进程数增多，进程并发程度高，处理器利用率先增后降</p>
+<p>原因：进程增多，每个进程的驻留集不断减少，当驻留集小于工作集，缺页率急剧上升，频繁调页使得开销增大</p>
+<p>因此需要OS选择合适的进程数目</p>
+<p>预防抖动：使用工作集算法，预留部分页面，挂起若干低优先级进程</p>
+<h3 id="页目录的自映射"><a href="#页目录的自映射" class="headerlink" title="页目录的自映射"></a>页目录的自映射</h3><p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329104544693.png" alt="image-20240329104544693"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329104803534.png" alt="image-20240329104803534"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329105945878.png" alt="image-20240329105945878"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240329105956033.png" alt="image-20240329105956033"></p>
+<p>以下为思考过程：</p>
+<p>首先是<code>4MB</code>，页目录的一项是<code>4B</code>，有1024项，一项对应一个页表，一个页表对应1024个页框，所以页目录的一项对应<code>4MB</code>大小，因此需要<code>4MB</code>对齐</p>
+<p>然后不考虑页目录，仅仅考虑页表，那么就是<code>1M</code>个页表项，每个页表项<code>4B</code>，每个页表项对应<code>4KB</code>物理空间，从PT_base开始，每<code>4B</code>对应<code>4KB</code>，那么总有一个很奇妙的位置–PD_base，这里的<code>4B</code>刚刚好对应到蓝色区域的最下方<code>4KB</code>，再想想，对应的这<code>4KB</code>是不是就是一个<strong>页表</strong>呢？那我们回到页目录的视角，整个<code>4MB</code>空间是不是就是划分为了1024个页表，所以，我们刚刚很特殊的那个位置的<code>4B</code>对应了我们的第一个页表。仔细看看这个<code>4B</code>的页表项，它本来在页表视角下，就是页表的一个比较特殊的页表项，但是页表和页目录本身在结构上没有任何区别。这里还要强调，在页目录视角下，这里划分为1024个页表，那么特殊的<code>4B</code>也在其中一个页表中，计算一下它的地址为<code>TB_base &gt;&gt; 12 * 4 + TB_base</code>刚好是对<code>4KB</code>对齐的，那么<code>4B</code>就在某个<code>4KB</code>的起始位置，把这个<code>4KB</code>从页表看作页目录，那么<code>4B</code>就是页目录的第一项，它对应的页表就是蓝色区域的第一项页表。这样也就找到了PD_base的地址了，那么再找自映射的地址，在这个页目录里，会有一个很特殊的页目录项指向的页表（页目录）就是页目录，也就是页目录的这<code>4KB</code>空间，因为页目录本身就是个页表，那就是从PT_base为第一个页表，找到特殊的那个页表，也就是<code>(PD_base-PT_base)&gt;&gt;10</code>，这里计算的是偏移多少个页表，那么最终的<code>PDE_self-mapping = PD_base + (PD_base-PT_base)&gt;&gt;10*4</code></p>
+<p>简化以上的所有式子就是<br>$$<br>PT_{base}&#x3D;(PT_{base}&gt;&gt;22)&lt;&lt;22 \<br>PD_{base}&#x3D;PT_{base}+PT_{base}&gt;&gt;12 *4\<br>PD_{base}&#x3D;PT_{base}+PT_{base}&gt;&gt;10<br>PDE_{self_mapping}&#x3D;PD_{base}+(PD_{base}-PT_{base})&gt;&gt;12 * 4\<br>PDE_{self_mapping}&#x3D;PT_{base}+PT_{base}&gt;&gt;10+PT_{base}&gt;&gt;20<br>$$</p>
+<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h3 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h3><p>并发：两个活动在相同或者不同的处理机上，只要其都在各自的起点和终点的某个位置上，称这两个活动并发执行</p>
+<p>并行：两个活动在不同的处理机上，在同一个时间度量下同时运行，则称这两个活动并行执行</p>
+<p>程序顺序执行的特征：顺序性、封闭性（独占全部资源）、可复现性</p>
+<p>并发执行的程序的时间是重叠的，程序特征：间断性、非封闭性（资源的共享）、不可复现（依赖执行次序，可能跑很多次结果都不一样）</p>
+<h4 id="Bernstein条件"><a href="#Bernstein条件" class="headerlink" title="Bernstein条件"></a>Bernstein条件</h4><p>两个进程的子集（读子集，写子集），两个进程的读子集可以公共，但是其它任意组合的交集都必须为空集</p>
+<p>这个条件可以用来<strong>判断程序对于并发执行结果可再现的充分条件</strong></p>
+<h4 id="进程定义"><a href="#进程定义" class="headerlink" title="进程定义"></a>进程定义</h4><ul>
+<li>进程是程序的一次执行，可以和别的计算并发</li>
+<li>是系统进行资源分配和调度的一个单位</li>
+</ul>
+<p>一个进程包含：程序代码，程序数据，下一条指令，系统资源</p>
+<p>进程与程序区别</p>
+<table>
+<thead>
+<tr>
+<th>进程</th>
+<th>程序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>动态，是程序的执行</td>
+<td>静态，是代码，文本</td>
+</tr>
+<tr>
+<td>暂时</td>
+<td>永久</td>
+</tr>
+<tr>
+<td>一个程序多次执行对应多个进程</td>
+<td>一个进程包含多个程序</td>
+</tr>
+</tbody></table>
+<h4 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h4><p>主要任务：创建、撤销进程，实现进程的转换，由内核实现</p>
+<p><strong>原语</strong>：由若干条指令组成的指令序列，实现某些特殊功能（在内核态运行，常驻内存，不可分割，不可中断）</p>
+<p><strong>进程的三种基本状态</strong></p>
+<ul>
+<li><p>就绪状态：进程已获得除处理机外的所需资源，等待分配处理机资源；只要分配CPU就可执行。</p>
+</li>
+<li><p>执行状态：占用处理机资源；处于此状态的进程的数目小于等于CPU的数目。在没有其他进程可以执行时（如所有进程都在阻塞状态），通常会自动执行系统的idle进程（相当于空操作）。</p>
+</li>
+<li><p>阻塞状态：正在执行的进程，由于发生某种事件而暂时无法执行，便放弃处理机处于暂停状态。</p>
+</li>
+</ul>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240408191931162.png" alt="image-20240408191931162"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240408191940511.png" alt="image-20240408191940511"></p>
+<h4 id="进程控制块"><a href="#进程控制块" class="headerlink" title="进程控制块"></a>进程控制块</h4><p>系统为每一个进程定义了一个数据结构：进程控制块（PCB）</p>
+<p>作用：进程创建、撤销，进程唯一标志</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240408195515439.png" alt="image-20240408195515439"></p>
+<ul>
+<li><p>进程标识符:每个进程都必须有一个唯一的标识符，可以是字符串，也可以是一个数字。Linux系统中就是一个整型数。在进程创建时由系统赋予。</p>
+</li>
+<li><p>程序和数据地址:把PCB与其程序和数据联系起来。</p>
+</li>
+<li><p>当前状态：为了管理的方便，系统设计时会将相同的状态的进程组成一个队列，如就绪进程队列，等待进程则要根据等待的事件组成多个等待队列，如等待打印机队列、等待磁盘I&#x2F;O完成队列等等</p>
+</li>
+<li><p>现场保护区:当进程因某种原因不能继续占用CPU时（等待打印机），释放CPU，这时就要将CPU的各种状态信息保护起来，为将来再次得到处理机恢复CPU的各种状态，继续运行。</p>
+</li>
+<li><p>同步与同步机制：用于实现进程间互斥、同步和通信所需的信号量等。</p>
+</li>
+<li><p>优先级：进程的优先级反映进程的紧迫程度，通常由用户指定和系统设置。Linux系统采用用户设置和系统计算相结合的方式确定进程的优先级 。</p>
+</li>
+<li><p>资源清单：列出所拥有的除CPU外的资源记录，如拥有的I&#x2F;O设备、打开的文件列表等。</p>
+</li>
+<li><p>链接字 ：根据进程所处的执行状态，进程相应的PCB加入到不同队列中。PCB链接字指出该进程所在队列中下一个进程PCB的首地址。</p>
+</li>
+<li><p>其他信息：如进程记账信息，进程占用CPU的时间等。</p>
+</li>
+</ul>
+<h4 id="PCB的三种组织方式"><a href="#PCB的三种组织方式" class="headerlink" title="PCB的三种组织方式"></a>PCB的三种组织方式</h4><ul>
+<li><p>线性表：不论进程的状态如何，将所有的PCB连续地存放在内存的系统区。这种方式适用于系统中进程数目不多的情况。</p>
+</li>
+<li><p>索引表：该方式是线性表方式的改进，系统按照进程的状态分别建立就绪索引表、阻塞索引表等</p>
+</li>
+<li><p>链接表：系统按照进程的状态将进程的PCB组成队列，从而形成就绪队列、阻塞队列、运行队列等。</p>
+</li>
+</ul>
+<p>进程切换与trap内核的区别</p>
+<p>进程切换：由调度器执行，保存进程断点，切换内存映射</p>
+<p>trap内核：cpu状态改变，需要保存现场（寄存器，堆栈）（mode swtch消耗要小一些）</p>
+<h3 id="线程thread"><a href="#线程thread" class="headerlink" title="线程thread"></a>线程thread</h3><p>线程间可以并发执行，线程间可以共享相同的地址空间</p>
+<p>进程包含：资源拥有者（进程），可执行单元（线程）</p>
+<p>线程实现<strong>资源与计算分离</strong>，提升并发效率</p>
+<p>多线程并发比多进程并发更加细粒度，并发性更好</p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240410101220278.png" alt="image-20240410101220278"></p>
+<p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240410101241839.png" alt="image-20240410101241839"></p>
+<p>进程的开销大，线程由于资源共享，有效减少创建&#x2F;撤销&#x2F;切换&#x2F;同步等造成的开销</p>
+<p>典型的多线程系统：JAVA的JVM，就是一个单进程多线程</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>进程</th>
+<th>线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本概念</td>
+<td>程序的一次执行</td>
+<td>进程中的可执行单元，进程中的一个实体，可以与其他同进程的线程共享进程拥有的所有资源，同时也拥有栈、PC等私有资源</td>
+</tr>
+<tr>
+<td>资源共享</td>
+<td>资源分配单位，有运行程序的全部资源</td>
+<td>程中的一个实体，可以与程中的一个实体，可以与cpu调度单位，只有少量必要的资源</td>
+</tr>
+<tr>
+<td>系统开销</td>
+<td>创建&#x2F;撤销&#x2F;切换&#x2F;同步开销大</td>
+<td>其他同进程的线程共享进其他同进程的线程共享进小</td>
+</tr>
+<tr>
+<td>并发程度</td>
+<td>低</td>
+<td>程拥有的所有资源，同时程拥有的所有资源，同时高</td>
+</tr>
+</tbody></table>
+<h3 id="线程实现方式"><a href="#线程实现方式" class="headerlink" title="线程实现方式"></a>线程实现方式</h3><h4 id="用户级线程"><a href="#用户级线程" class="headerlink" title="用户级线程"></a>用户级线程</h4><p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240410101830950.png" alt="image-20240410101830950"></p>
+<p>用户级线程库主要功能：</p>
+<ul>
+<li>创建&#x2F;销毁线程</li>
+<li>线程间传递消息数据</li>
+<li>线程调度</li>
+<li>保存和恢复线程上下文</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>线程切换与内核无关</td>
+<td>很多系统调用引起阻塞，会阻塞所有相关的线程</td>
+</tr>
+<tr>
+<td>线程调度由应用决定，易优化（cpu调度以进程为单位）</td>
+<td>一个进程只能分配一个处理器，无法实现一个进程的多个线程并行执行</td>
+</tr>
+<tr>
+<td>可运行在任何OS上，只要线程库支持</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="内核级线程"><a href="#内核级线程" class="headerlink" title="内核级线程"></a>内核级线程</h4><p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240410102241661.png" alt="image-20240410102241661"></p>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内核可以在多个处理器上调度一个进程的多个线程实现并行</td>
+<td>一个进程中的线程切换需要内核参与，线程切换涉及到两个模式切换（进程-进程，线程-线程）</td>
+</tr>
+<tr>
+<td>阻塞发生在线程级别（区别于用户级线程的进程级阻塞）</td>
+<td>减低效率（相比于用户级线程，需要系统调用内核支持）</td>
+</tr>
+<tr>
+<td>内核的一些处理可以用多线程实现</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="混合级线程"><a href="#混合级线程" class="headerlink" title="混合级线程"></a>混合级线程</h4><p><img src="C:\Users\86159\AppData\Roaming\Typora\typora-user-images\image-20240410103447904.png" alt="image-20240410103447904"></p>
+<h3 id="线程模型"><a href="#线程模型" class="headerlink" title="线程模型"></a>线程模型</h3><p>在有些同时支持用户线程和内核线程的系统中，有多种用户级线程和内核级线程连接方式</p>
+<p>多对一，一对一，多对多</p>
+<p><strong>特殊情况下多线程劣势</strong>：在大量计算<strong>或</strong>大量IO的应用中</p>
+<h2 id="同步与互斥"><a href="#同步与互斥" class="headerlink" title="同步与互斥"></a>同步与互斥</h2>
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2024-04-23</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
