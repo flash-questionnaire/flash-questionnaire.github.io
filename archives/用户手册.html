@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/flashq.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/flashq.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <ul>
+<li><a href="/">Home</a>😁</li>
+<li><a href="/archives/%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE">服务条款</a>🥰</li>
+<li><a href="/archives/%E9%9A%90%E7%A7%81%E5%8D%8F%E8%AE%AE">隐私协议</a>🫡</li>
+<li><a href="/archives/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC">关于我们</a>🤓</li>
+<li><a href="/archives/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C">用户手册</a>🙉</li>
+</ul>
+<h2 id="README🎥">README🎥</h2>
+<ul>
+<li><a href="/archives/readme">readme</a>🤡</li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h1 id="目录">目录</h1>
+<ol>
+<li>简介</li>
+<li>系统要求</li>
+<li>安装与设置</li>
+<li>用户指南
+<ul>
+<li>4.1 用户注册与登录</li>
+<li>4.2 创建问卷</li>
+<li>4.3 管理问卷</li>
+<li>4.4 收集与分析数据</li>
+<li>4.5 用户权限管理</li>
+<li>4.6 问卷分享与发布</li>
+</ul>
+</li>
+<li>常见问题与解决方法</li>
+<li>联系与支持</li>
+</ol>
+<hr>
+<h1 id="1-简介">1. 简介</h1>
+<p>闪电问卷是一个强大且易用的在线问卷管理系统，旨在帮助用户快速创建、发布和管理问卷。它提供了丰富的问卷模板、多种问题类型和强大的数据分析工具，适用于学术研究、市场调查和客户反馈等多种场景。</p>
+<hr>
+<h1 id="2-系统要求">2. 系统要求</h1>
+<ul>
+<li><strong>操作系统</strong>：Windows、macOS、Linux</li>
+<li><strong>浏览器</strong>：推荐使用最新版本的 Chrome、Firefox、Safari 或 Edge</li>
+<li><strong>网络连接</strong>：稳定的互联网连接</li>
+</ul>
+<hr>
+<h1 id="3-安装与设置">3. 安装与设置</h1>
+<h2 id="3-1-下载与安装">3.1 下载与安装</h2>
+<p>暂无</p>
+<h2 id="3-2-初始设置">3.2 初始设置</h2>
+<p>暂时无需用户进行初始设置</p>
+<hr>
+<h1 id="4-用户指南">4. 用户指南</h1>
+<h2 id="4-1-用户注册与登录">4.1 用户注册与登录</h2>
+<ol>
+<li>
+<p><strong>注册</strong>：</p>
+<ul>
+<li>打开闪电问卷登录页面，点击“注册”按钮。</li>
+<li>输入用户名、密码和邮箱地址，完成注册。</li>
+</ul>
+</li>
+<li>
+<p><strong>登录</strong>：</p>
+<ul>
+<li>输入注册时的用户名和密码，点击“登录”按钮进入系统。</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-2-创建问卷">4.2 创建问卷</h2>
+<ol>
+<li>
+<p><strong>进入问卷创建页面</strong>：<br>
+登录后，点击“创建问卷”按钮。</p>
+</li>
+<li>
+<p><strong>设置问卷基本信息</strong>：<br>
+输入问卷标题、描述等基本信息。</p>
+</li>
+<li>
+<p><strong>添加问题</strong>：</p>
+<ul>
+<li>点击“添加问题”按钮选择问题类型（单选、多选、填空等）。</li>
+<li>输入问题内容和选项。</li>
+</ul>
+</li>
+<li>
+<p><strong>保存问卷</strong>：<br>
+完成问卷设计后，点击“保存”按钮。</p>
+</li>
+</ol>
+<h2 id="4-3-管理问卷">4.3 管理问卷</h2>
+<ol>
+<li>
+<p><strong>查看已创建问卷</strong>：<br>
+在“控制台”页面，可以查看所有已创建的问卷。</p>
+</li>
+<li>
+<p><strong>编辑问卷</strong>：<br>
+选择需要编辑的问卷，点击“编辑”按钮进行修改。</p>
+</li>
+<li>
+<p><strong>删除问卷</strong>：<br>
+选择需要删除的问卷，点击“删除”按钮。</p>
+</li>
+<li>
+<p><strong>发布/回收问卷</strong>：<br>
+在问卷详情页面，点击“发布/回收”按钮。</p>
+</li>
+<li>
+<p><strong>导出/分享</strong></p>
+<p>选择需要导出的问卷，问卷可以以链接方式导出，以二维码形势导出，将问卷分享至公共广场</p>
+</li>
+<li>
+<p><strong>复制</strong></p>
+<p>对问卷进行复制，进一步修改问卷内容</p>
+</li>
+</ol>
+<h2 id="4-4-收集与分析数据">4.4 收集与分析数据</h2>
+<ol>
+<li>
+<p><strong>查看问卷结果</strong>：<br>
+发布后的问卷，可以在“数据分析”页面查看收集到的答案数据。</p>
+</li>
+<li>
+<p><strong>导出数据</strong>：<br>
+点击“导出数据”按钮，将问卷结果导出为 Excel 或 CSV 文件。</p>
+</li>
+<li>
+<p><strong>数据分析</strong>：</p>
+<ul>
+<li>系统提供基础的数据统计功能，如选择题的选项分布、填空题的关键词提取等。</li>
+<li>通过图表查看数据分析结果。</li>
+<li>系统还提供交叉分析，对不同题目提供交叉数据分析</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-5-用户信息中心">4.5 用户信息中心</h2>
+<ol>
+<li>
+<p><strong>收藏的问卷</strong></p>
+<p>用户可以查看自己收藏过的所有问卷</p>
+</li>
+<li>
+<p><strong>购买的问卷</strong></p>
+<p>用户可以查看购买的问卷，对于已购买的问卷可以查看其数据分析结果</p>
+</li>
+<li>
+<p><strong>填写记录</strong></p>
+<p>用户填写过的问卷的所有记录都存在</p>
+</li>
+<li>
+<p><strong>闪电币</strong></p>
+<p>在用户中心用户可以看到自己的闪电币，闪电币可以通过填写问卷获得，可以用于购买广场的问卷的数据分析结果</p>
+</li>
+<li>
+<p><strong>个人信息修改</strong></p>
+<p>用户可以更改自己的名字，邮箱，可以上传自己喜欢的头像</p>
+</li>
+</ol>
+<h2 id="4-6-问卷广场">4.6 问卷广场</h2>
+<ol>
+<li>
+<p><strong>展示公共问卷</strong></p>
+<p>问卷广场展示所有用户公共的发布到广场的问卷，所有问卷都可以对其进行收藏，填写，浏览数据等</p>
+</li>
+<li>
+<p><strong>公共的招募平台</strong></p>
+<p>苦于问卷无人填写，可以将其发到广场让感兴趣的大众进行填写，有闪电币作为奖励机制</p>
+</li>
+</ol>
+<h2 id="4-7-问卷回收站">4.7 问卷回收站</h2>
+<ol>
+<li>
+<p><strong>恢复问卷</strong></p>
+<p>对于用户在控制台删除的问卷会对其进行暂时保留，用户可以在回收站恢复其数据</p>
+</li>
+<li>
+<p><strong>永久删除问卷</strong></p>
+<p>用户在回收站操作将可以永久的删除问卷，删除其所有信息</p>
+</li>
+</ol>
+<h2 id="4-8-密码找回">4.8 密码找回</h2>
+<ol>
+<li>
+<p><strong>密码修改</strong></p>
+<p>对于忘记密码或者想要修改密码的用户，用户输入用户名和邮箱可以对密码进行重置修改</p>
+</li>
+</ol>
+<hr>
+<h1 id="5-常见问题与解决方法">5. 常见问题与解决方法</h1>
+<h2 id="5-1-无法登录">5.1 无法登录</h2>
+<ul>
+<li><strong>检查网络连接</strong>：确保网络连接正常。</li>
+<li><strong>重置密码</strong>：在登录页面点击“忘记密码”，通过邮箱重置密码。</li>
+<li><strong>删除网站cookie</strong>：在设置中找到当前网站的cookie信息</li>
+</ul>
+<h2 id="5-2-无法创建问卷">5.2 无法创建问卷</h2>
+<ul>
+<li><strong>检查账户权限</strong>：确认账户是否有创建问卷的权限。</li>
+<li><strong>联系管理员</strong>：如果问题依然存在，联系系统管理员。</li>
+</ul>
+<h2 id="5-3-数据导出失败">5.3 数据导出失败</h2>
+<ul>
+<li><strong>检查文件格式</strong>：确保选择了正确的导出格式（Excel 或 CSV）。</li>
+<li><strong>重试导出</strong>：如果仍然失败，重试一次。</li>
+</ul>
+<h2 id="5-4-无法查看问卷结果">5.4 无法查看问卷结果</h2>
+<ul>
+<li><strong>检查问卷状态</strong>：确认问卷是否已发布并有数据收集。</li>
+<li><strong>刷新页面</strong>：尝试刷新页面或重新登录系统。</li>
+</ul>
+<hr>
+<h1 id="6-联系与支持">6. 联系与支持</h1>
+<p>如果在使用过程中遇到任何问题或需要技术支持，请通过以下方式联系我们：</p>
+<ul>
+<li><strong>在线帮助文档</strong>：访问我们的网站，查看详细的在线帮助文档和常见问题解答。</li>
+</ul>
+<hr>
+<p>以上是闪电问卷的用户手册，希望能帮助你顺利使用该系统。如有其他问题或需求，请联系技术支持或查看在线帮助文档。祝你使用愉快！</p>
+
+</article>
+
+<div id="paginator">
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure class="avatar avatar-lg">
+          <img src="/flashq.svg" alt="...">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>flash-questionnaire</div>
+      <div>2024-06-09</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
